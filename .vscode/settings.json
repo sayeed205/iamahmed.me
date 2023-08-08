@@ -1,3 +1,12 @@
 {
-    "cSpell.words": ["iamahmed", "ianvs"]
+    "prettier.configPath": "./prettier.config.js",
+    "prettier.prettierPath": "./node_modules/prettier",
+    "cSpell.words": [
+        "classname",
+        "clickables",
+        "clsx",
+        "iamahmed",
+        "ianvs",
+        "lucide"
+    ]
 }
