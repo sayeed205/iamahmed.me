@@ -19,11 +19,9 @@ export function ModeToggle() {
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
                 <Button
-                    // variant="ghost"
-                    // size="sm"
+                    variant="ghost"
                     className={cn(
-                        ''
-                        // buttonVariants({ variant: 'secondary' })
+                        'rounded-3xl border-none border-transparent hover:bg-border hover:text-primary focus:ring-transparent focus:ring-offset-0 '
                     )}
                 >
                     <Icons.sun className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />

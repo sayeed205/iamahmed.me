@@ -7,8 +7,8 @@ import { buttonVariants } from './button';
 
 export default function Header() {
     return (
-        <header className="sticky top-0 z-40 bg-background">
-            <div className="container flex h-24 items-center justify-between px-24 py-6">
+        <header className="sticky top-0 z-40 h-28 bg-background">
+            <div className="container flex h-24 items-center justify-between px-24 py-8">
                 <div className=""></div>
                 <div className="flex flex-row gap-2">
                     <ModeToggle />

@@ -1,6 +1,12 @@
-import { Nunito as FontSans } from 'next/font/google';
+import localFont from 'next/font/local';
 
-export const fontSans = FontSans({
-    subsets: ['latin'],
+export const fontSans = localFont({
+    src: [
+        { path: '../../public/fonts/raisonne.woff2' },
+        { path: '../../public/fonts/raisonne.woff' },
+    ],
+    display: 'swap',
+    weight: '400',
+    style: 'normal',
     variable: '--font-sans',
 });
