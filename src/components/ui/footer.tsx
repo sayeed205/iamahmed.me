@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 export function Footer() {
     return (
-        <footer className="sticky bottom-0 w-screen bg-background text-center">
-            <div className="py-2r gap- container items-center justify-center text-center">
+        <footer className="sticky bottom-0 w-screen bg-background p-2 text-center">
+            <div className="container items-center justify-center gap-2 text-center">
                 <p className="text-center text-sm leading-loose ">
                     Made with ❤ by{' '}
                     <Link

@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "title": "MonkeyPaste",
+        "desc": "A simple code sharing platform",
+        "role": "Lead Developer",
+        "lang": "TypeScript, Node.js, NextJS, MongoDB",
+        "link": "https://github.com/sayeed205/Monkey-Paste"
+    },
+    {
+        "id": 2,
+        "title": "CashIOU",
+        "desc": "Track your all money lendings and borrowings",
+        "role": "Lead Developer",
+        "lang": "TypeScript, Node.js, NextJS, MongoDB, NestJS",
+        "link": "https://cashiou.vercel.app/"
+    },
+    {
+        "id": 3,
+        "title": "Git Raw Prettier",
+        "desc": "Chrome extension to prettify GitHub raw and gist files",
+        "role": "Lead Developer",
+        "lang": "TypeScript, Node.js",
+        "link": "https://github.com/sayeed205/git-raw-prettier"
+    },
+    {
+        "id": 4,
+        "title": "Heroku Switcher",
+        "desc": "Run your Heroku apps without worrying about the free dyno hours",
+        "role": "Lead Developer",
+        "lang": "MongoDb, ExpressJS, ReactJS, NodeJS",
+        "link": "https://github.com/sayeed205/Heroku-Switcher"
+    }
+]
