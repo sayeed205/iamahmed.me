@@ -4,6 +4,7 @@ import { siteConfig } from '@/config/site';
 import { fontSans } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 import Cursor from '@/components/ui/cursor';
+import { Footer } from '@/components/ui/footer';
 import Header from '@/components/ui/header';
 import { Analytics } from '@/components/analytics';
 import BlobAnimation from '@/components/blob-animation';
@@ -83,6 +84,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     <BlobAnimation />
                     <Header />
                     {children}
+                    <Footer />
                     <Cursor />
                     <Analytics />
                     <TailwindIndicator />
