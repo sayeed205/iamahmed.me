@@ -20,7 +20,7 @@ interface RootLayoutProps {
 export const metadata: Metadata = {
     title: {
         default: siteConfig.name,
-        template: `%s | ${siteConfig.name}`,
+        template: `${siteConfig.name}'s %s`,
     },
     description: siteConfig.description,
     keywords: [

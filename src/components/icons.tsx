@@ -6,6 +6,7 @@ import {
     ChevronRight,
     Code2,
     CreditCard,
+    ExternalLink,
     File,
     FileText,
     HelpCircle,
@@ -70,4 +71,5 @@ export const Icons = {
     ),
     twitter: Twitter,
     check: Check,
+    link: ExternalLink,
 };

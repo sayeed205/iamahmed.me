@@ -19,7 +19,7 @@ const navItem = [
 export default function Header() {
     const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
     return (
-        <header className="sticky top-0 z-40 h-28 bg-background">
+        <header className="sticky top-0 z-30 h-28 bg-background">
             <div className="container flex h-24 items-center justify-between px-24 py-8">
                 <div className=""></div>
 

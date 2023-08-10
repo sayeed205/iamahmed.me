@@ -83,7 +83,7 @@
 }
 
 /* custom scrollbar */
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 10px;
 }
 
@@ -102,11 +102,11 @@ html.dark ::-webkit-scrollbar {
     border-radius: 8px;
     border: 2px solid transparent;
     background-clip: content-box;
-} */
+}
 
 * {
-    /* scrollbar-width: thin;
-    scrollbar-color: var(--accent) var(--background); */
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--background);
     overflow: hidden;
 }
 

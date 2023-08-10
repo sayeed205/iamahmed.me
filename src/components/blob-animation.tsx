@@ -4,7 +4,7 @@ const BlobAnimation = () => (
     <>
         <div className="hidden lg:block">
             <div
-                className={`pointer-events-none absolute -left-24 -top-40 z-50 `}
+                className={`pointer-events-none absolute -left-24 -top-40 z-40 `}
             >
                 <Image
                     src={'/blobs/blob.svg'}
@@ -24,7 +24,7 @@ const BlobAnimation = () => (
                 />
             </div>
             <div
-                className={`pointer-events-none absolute bottom-0 -z-50 -mb-16 -ml-40 h-96 w-96`}
+                className={`pointer-events-none absolute bottom-0 z-40 -mb-16 -ml-40 h-96 w-96`}
             >
                 <Image
                     src={'/blobs/blob.svg'}
