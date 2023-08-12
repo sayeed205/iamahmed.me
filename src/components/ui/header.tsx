@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react';
-import Link from 'next/link';
 import { Turn as Hamburger } from 'hamburger-react';
+import Link from 'next/link';
+import { useState } from 'react';
 
 import { cn } from '@/lib/utils';
 
+import { Icons } from '../icons';
 import { ModeToggle } from '../mode-toggle';
 import { buttonVariants } from './button';
 
@@ -21,7 +22,11 @@ export default function Header() {
     return (
         <header className="sticky top-0 z-30 h-28 bg-background">
             <div className="container flex h-24 items-center justify-between px-24 py-8">
-                <div className=""></div>
+                <div className="">
+                    <Link href="/">
+                    <Icons.home/>
+                    </Link>
+                </div>
 
                 <nav className="hidden gap-2 md:flex md:flex-row">
                     <ModeToggle />
@@ -35,7 +40,7 @@ export default function Header() {
                                     buttonVariants({
                                         variant: 'ghost',
                                         font: 'xl',
-                                    })
+                                    }),
                                 )}
                             >
                                 {item.name}
@@ -58,7 +63,7 @@ export default function Header() {
                                 buttonVariants({
                                     variant: 'link',
                                     font: 'xl',
-                                })
+                                }),
                             )}
                         >
                             {item.name}

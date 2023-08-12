@@ -2,7 +2,7 @@
 
 import { useTheme } from 'next-themes';
 
-import { cn } from '@/lib/utils';
+import { Icons } from '@/components/icons';
 import { Button } from '@/components/ui/button';
 import {
     DropdownMenu,
@@ -10,7 +10,7 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Icons } from '@/components/icons';
+import { cn } from '@/lib/utils';
 
 export function ModeToggle() {
     const { setTheme } = useTheme();
@@ -39,7 +39,7 @@ export function ModeToggle() {
                     <span>Dark</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setTheme('system')}>
-                    <Icons.laptop className="mr-2 h-4 w-4" />
+                    <Icons.system className="mr-2 h-4 w-4" />
                     <span>System</span>
                 </DropdownMenuItem>
             </DropdownMenuContent>

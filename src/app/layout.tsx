@@ -1,15 +1,14 @@
 import { Metadata } from 'next';
 
-import { siteConfig } from '@/config/site';
-import { fontSans } from '@/lib/fonts';
-import { cn } from '@/lib/utils';
-import Cursor from '@/components/ui/cursor';
-import { Footer } from '@/components/ui/footer';
-import Header from '@/components/ui/header';
 import { Analytics } from '@/components/analytics';
 import BlobAnimation from '@/components/blob-animation';
 import { TailwindIndicator } from '@/components/tailwind-indicator';
 import { ThemeProvider } from '@/components/theme-provider';
+import Cursor from '@/components/ui/cursor';
+import { Footer } from '@/components/ui/footer';
+import Header from '@/components/ui/header';
+import { fontSans } from '@/lib/fonts';
+import { cn } from '@/lib/utils';
 
 import '@/styles/globals.css';
 
@@ -17,12 +16,15 @@ interface RootLayoutProps {
     children: React.ReactNode;
 }
 
+const siteURL = process.env.NEXT_PUBLIC_URL as string;
+
 export const metadata: Metadata = {
     title: {
-        default: siteConfig.name,
-        template: `${siteConfig.name}'s %s`,
+        default: "Sayed Ahmed",
+        template: `Sayed Ahmed's %s`,
     },
-    description: siteConfig.description,
+    description: "Full Stack Web Developer, based in WB, India.",
+    metadataBase: new URL(siteURL),
     keywords: [
         'Portfolio',
         'Next.js',
@@ -31,6 +33,8 @@ export const metadata: Metadata = {
         'Server Components',
         'Radix UI',
         'TypeScript',
+        "Web Developer",
+        "Backend Developer"
     ],
     authors: [
         {
@@ -46,16 +50,16 @@ export const metadata: Metadata = {
     openGraph: {
         type: 'website',
         locale: 'en_US',
-        url: siteConfig.url,
-        title: siteConfig.name,
-        description: siteConfig.description,
-        siteName: siteConfig.name,
+        url: siteURL,
+        title: "Sayed Ahmed's Portfolio",
+        description: "Full Stack Web Developer, based in WB, India.",
+        siteName: "Sayed Ahmed's Portfolio",
     },
     twitter: {
         card: 'summary_large_image',
-        title: siteConfig.name,
-        description: siteConfig.description,
-        images: [`${siteConfig.url}/og.jpg`],
+        title: "Sayed Ahmed's Portfolio",
+        description: "Full Stack Web Developer, based in WB, India.",
+        images: [`${siteURL}/og.png`],
         creator: 'Sayed Ahmed',
     },
     icons: {
@@ -63,7 +67,7 @@ export const metadata: Metadata = {
         shortcut: '/favicon-16x16.png',
         apple: '/apple-touch-icon.png',
     },
-    manifest: `${siteConfig.url}/site.webmanifest`,
+    manifest: `${siteURL}/site.webmanifest`,
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {
