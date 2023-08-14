@@ -21,12 +21,10 @@ export default function Header() {
     const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
     return (
         <header className="sticky top-0 z-30 h-28 bg-background">
-            <div className="container flex h-24 items-center justify-between px-24 py-8">
-                <div className="">
-                    <Link href="/">
-                    <Icons.home/>
-                    </Link>
-                </div>
+            <div className="container flex items-center justify-between h-24 px-24 py-8">
+                <Link href="/" aria-label='home'>
+                    <Icons.home />
+                </Link>
 
                 <nav className="hidden gap-2 md:flex md:flex-row">
                     <ModeToggle />
@@ -50,9 +48,8 @@ export default function Header() {
                 </nav>
 
                 <div
-                    className={`fixed inset-0 z-50 grid h-[calc(100vh-4rem)] grid-flow-row auto-rows-max overflow-auto p-6 pb-32 shadow-md backdrop-blur duration-75 animate-in slide-in-from-bottom-80 md:hidden md:backdrop-blur-none ${
-                        showMobileMenu ? 'top-16' : 'top-[calc(100vh+4rem)]'
-                    }`}
+                    className={`fixed inset-0 z-50 grid h-[calc(100vh-4rem)] grid-flow-row auto-rows-max overflow-auto p-6 pb-32 shadow-md backdrop-blur duration-75 animate-in slide-in-from-bottom-80 md:hidden md:backdrop-blur-none ${showMobileMenu ? 'top-16' : 'top-[calc(100vh+4rem)]'
+                        }`}
                 >
                     {navItem.map((item) => (
                         <Link
