@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { motion } from 'framer-motion';
 import { Turn as Hamburger } from 'hamburger-react';
 
 import { cn } from '@/lib/utils';
@@ -11,6 +13,7 @@ import { ModeToggle } from '../mode-toggle';
 import { buttonVariants } from './button';
 
 const navItem = [
+    { name: 'Home', href: '/' },
     { name: 'Projects', href: '/projects' },
     { name: 'Skills', href: '/skills' },
     { name: 'Contact', href: '/contact' },
@@ -18,7 +21,11 @@ const navItem = [
 ];
 
 export default function Header() {
+    let pathname = usePathname() || '/';
+
     const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
+    const [hoveredPath, setHoveredPath] = useState(pathname);
+
     return (
         <header className="sticky top-0 z-30 h-28 bg-background">
             <div className="container flex items-center justify-between h-24 px-24 py-8">
@@ -28,22 +35,49 @@ export default function Header() {
 
                 <nav className="hidden gap-2 md:flex md:flex-row">
                     <ModeToggle />
-                    <div className="flex flex-row gap-2">
-                        {navItem.map((item) => (
-                            <Link
-                                key={item.name}
-                                href={item.href}
-                                className={cn(
-                                    'hover:text-foreground/80 flex items-center transition-colors',
-                                    buttonVariants({
-                                        variant: 'ghost',
-                                        font: 'xl',
-                                    }),
-                                )}
-                            >
-                                {item.name}
-                            </Link>
-                        ))}
+                    <div className="flex gap-2 relative justify-start w-full z-[100]  rounded-lg">
+                        {navItem.map((item) => {
+                            const isActive = item.href === pathname;
+
+                            return (
+                                <Link
+                                    key={item.name}
+                                    href={item.href}
+                                    className={cn(
+                                        'px-4 py-2 rounded-md text-sm lg:text-base relative no-underline duration-300 ease-in',
+                                        isActive
+                                            ? 'text-zinc-100'
+                                            : 'text-zinc-400',
+                                    )}
+                                    data-active={isActive}
+                                    onMouseOver={() =>
+                                        setHoveredPath(item.href)
+                                    }
+                                    onMouseLeave={() =>
+                                        setHoveredPath(pathname)
+                                    }
+                                >
+                                    <span>{item.name}</span>
+                                    {item.href === hoveredPath && (
+                                        <motion.div
+                                            className="absolute bottom-0 left-0 h-full rounded-md bg-blue-600/80 -z-10"
+                                            layoutId="navbar"
+                                            aria-hidden="true"
+                                            style={{
+                                                width: '100%',
+                                            }}
+                                            transition={{
+                                                type: 'spring',
+                                                bounce: 0.25,
+                                                stiffness: 130,
+                                                damping: 9,
+                                                duration: 0.3,
+                                            }}
+                                        />
+                                    )}
+                                </Link>
+                            );
+                        })}
                     </div>
                 </nav>
 
