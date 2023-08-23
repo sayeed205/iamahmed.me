@@ -1,6 +1,6 @@
+import ContactCard, { ContactInfo } from '@/components/ui/contact-card';
 import { ContactHeading } from '@/components/heading';
 import { Icons } from '@/components/icons';
-import ContactCard, { ContactInfo } from '@/components/ui/contact-card';
 
 const Contacts = async () => {
     const ContactData: ContactInfo[] = [
@@ -9,35 +9,35 @@ const Contacts = async () => {
             social: 'LinkedIn',
             username: '@sayeed205',
             link: 'https://www.linkedin.com/in/sayeed205/',
-            image: <Icons.linkedin    />,
+            image: <Icons.linkedin size={'2em'} />,
         },
         {
             id: 2,
             social: 'GitHub',
             username: '@sayeed205',
             link: 'https://gitHub.com/sayeed205',
-            image: <Icons.gitHub />,
+            image: <Icons.gitHub size={'2em'} />,
         },
         {
             id: 3,
             social: 'Telegram',
             username: '@sayeed69',
             link: 'https://t.me/sayeed69',
-            image: <Icons.telegram />,
+            image: <Icons.telegram size={'2em'} />,
         },
         {
             id: 4,
             social: 'Twitter',
             username: '@Sayeed81828980',
             link: 'https://twitter.com/Sayeed81828980',
-            image: <Icons.twitter />,
+            image: <Icons.twitter size={'2em'} />,
         },
         {
             id: 5,
             social: 'Email',
             username: 'sayeed205@gmail.com',
             link: 'mailto:sayeed205@gmail.com',
-            image: <Icons.mail />,
+            image: <Icons.mail size={'2em'} />,
         },
         {
             id: 6,
@@ -45,20 +45,6 @@ const Contacts = async () => {
             username: '@hitarashi',
             link: 'https://hitarashi.bio.link/',
             image: <Icons.bio />,
-        },
-        {
-            id: 7,
-            social: 'Spotify',
-            username: '@Hitarashi',
-            link: 'https://open.spotify.com/user/31wgrcodyvofq7iqkfg45v2uftl4',
-            image: <Icons.spotify />,
-        },
-        {
-            id: 8,
-            social: 'Reddit',
-            username: 'u/sayeed205',
-            link: 'https://www.reddit.com/user/sayeed205',
-            image: <Icons.reddit />,
         },
     ];
 

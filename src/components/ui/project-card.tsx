@@ -36,7 +36,7 @@ const ProjectCard = (props: ProjectCardProps) => {
                         {props.title}
                     </h2>
                     <div className="lg:invisible lg:group-hover:visible ">
-                        <Icons.link />
+                        <Icons.link size={'2em'} />
                     </div>
                 </div>
                 <p className="text-lg text-slate-200">{props.desc}</p>

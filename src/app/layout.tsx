@@ -1,14 +1,14 @@
 import { Metadata } from 'next';
 
+import { fontSans } from '@/lib/fonts';
+import { cn } from '@/lib/utils';
+import Cursor from '@/components/ui/cursor';
+import { Footer } from '@/components/ui/footer';
+import Header from '@/components/ui/header';
 import { Analytics } from '@/components/analytics';
 import BlobAnimation from '@/components/blob-animation';
 import { TailwindIndicator } from '@/components/tailwind-indicator';
 import { ThemeProvider } from '@/components/theme-provider';
-import Cursor from '@/components/ui/cursor';
-import { Footer } from '@/components/ui/footer';
-import Header from '@/components/ui/header';
-import { fontSans } from '@/lib/fonts';
-import { cn } from '@/lib/utils';
 
 import '@/styles/globals.css';
 
@@ -20,10 +20,10 @@ const siteURL = process.env.NEXT_PUBLIC_URL as string;
 
 export const metadata: Metadata = {
     title: {
-        default: "Sayed Ahmed",
+        default: 'Sayed Ahmed',
         template: `Sayed Ahmed's %s`,
     },
-    description: "Full Stack Web Developer, based in WB, India.",
+    description: 'Full Stack Web Developer, based in WB, India.',
     metadataBase: new URL(siteURL),
     keywords: [
         'Portfolio',
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
         'Server Components',
         'Radix UI',
         'TypeScript',
-        "Web Developer",
-        "Backend Developer"
+        'Web Developer',
+        'Backend Developer',
     ],
     authors: [
         {
@@ -52,13 +52,13 @@ export const metadata: Metadata = {
         locale: 'en_US',
         url: siteURL,
         title: "Sayed Ahmed's Portfolio",
-        description: "Full Stack Web Developer, based in WB, India.",
+        description: 'Full Stack Web Developer, based in WB, India.',
         siteName: "Sayed Ahmed's Portfolio",
     },
     twitter: {
         card: 'summary_large_image',
         title: "Sayed Ahmed's Portfolio",
-        description: "Full Stack Web Developer, based in WB, India.",
+        description: 'Full Stack Web Developer, based in WB, India.',
         images: [`${siteURL}/og.png`],
         creator: 'Sayed Ahmed',
     },
@@ -77,7 +77,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <body
                 className={cn(
                     'h-screen max-h-screen min-h-screen bg-background font-sans antialiased',
-                    fontSans.variable
+                    fontSans.variable,
                 )}
             >
                 <ThemeProvider
@@ -85,6 +85,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     defaultTheme="system"
                     enableSystem
                 >
+                    {/* <IconContext.Provider value={{ size: '1em' }}> */}
                     <BlobAnimation />
                     <Header />
                     {children}
@@ -92,6 +93,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     <Cursor />
                     <Analytics />
                     <TailwindIndicator />
+                    {/* </IconContext.Provider> */}
                 </ThemeProvider>
             </body>
         </html>
