@@ -1,5 +1,4 @@
 import ContactCard, { ContactInfo } from '@/components/ui/contact-card';
-import { ScrollArea } from '@/components/ui/scroll-area';
 import { ContactHeading } from '@/components/heading';
 import { Icons } from '@/components/icons';
 
@@ -51,25 +50,23 @@ const Contacts = async () => {
 
     return (
         // <main className="py-20 text-center ">
-        <main className="mb-7 h-[calc(100vh-10rem)] overflow-auto pt-5 text-center">
+        <main className="h-screen pt-24 pb-32 overflow-auto text-center sm:pb-20 md:pb-10">
             <ContactHeading />
 
-            <ScrollArea>
-                <section className="flex items-center justify-center">
-                    <div className="grid grid-cols-1 gap-4 mb-10 md:grid-cols-2 md:gap-12 sm:mt-12">
-                        {ContactData.map((props) => (
-                            <ContactCard
-                                key={props.id}
-                                image={props.image}
-                                link={props.link}
-                                social={props.social}
-                                username={props.username}
-                                id={props.id}
-                            />
-                        ))}
-                    </div>
-                </section>
-            </ScrollArea>
+            <section className="flex items-center justify-center">
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-12 sm:mt-12">
+                    {ContactData.map((props) => (
+                        <ContactCard
+                            key={props.id}
+                            image={props.image}
+                            link={props.link}
+                            social={props.social}
+                            username={props.username}
+                            id={props.id}
+                        />
+                    ))}
+                </div>
+            </section>
         </main>
     );
 };

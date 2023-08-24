@@ -26,7 +26,7 @@ const ContactCard = (props: ContactInfo) => {
                     delay: props.id * 0.05,
                     ease: 'easeIn',
                 }}
-                className="w-84 transition-all relative top-0 mt-5 flex items-center space-y-2 rounded-md border-transparent bg-blue-600 p-8 px-7 text-left shadow-md duration-300 ease-in-out hover:-top-1 hover:bg-blue-700 hover:shadow-xl sm:ml-0 sm:mt-0 sm:h-40 sm:w-80 lg:w-[30rem]"
+                className="w-84 transition-all relative top-0 mt-5 flex items-center space-y-2 rounded-md border-transparent bg-blue-600 p-8 px-7 text-left shadow-md duration-300 ease-in-out hover:-top-1 hover:bg-blue-700 hover:shadow-xl sm:ml-0 sm:h-40 sm:w-80 lg:w-[30rem]"
             >
                 {/* <div className="pt-1.5 lg:pl-2.5 ">{props.image}</div> */}
                 {props.image}

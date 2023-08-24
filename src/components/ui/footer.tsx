@@ -2,9 +2,9 @@ import Link from 'next/link';
 
 export function Footer() {
     return (
-        <footer className="sticky bottom-0 w-screen bg-background p-2 text-center">
+        <footer className="fixed bottom-0 w-screen p-2 text-center transition duration-500 ease-in-out bg-background/50 backdrop-filter backdrop-blur-lg ">
             <div className="container items-center justify-center gap-2 text-center">
-                <p className="text-center text-sm leading-loose ">
+                <p className="text-sm leading-loose text-center ">
                     Made with ❤ by{' '}
                     <Link
                         href="https://github.com/sayeed205"
