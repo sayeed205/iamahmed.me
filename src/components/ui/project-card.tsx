@@ -29,7 +29,7 @@ const ProjectCard = (props: ProjectCardProps) => {
                     delay: props.id * 0.05,
                     ease: 'easeIn',
                 }}
-                className="foldWorkCard group relative top-0 mx-4 mt-5 min-h-fit space-y-2 rounded-md border-transparent bg-blue-600 px-6 py-4 text-left shadow-md transition-all duration-300 ease-in-out hover:-top-1 hover:bg-blue-700 hover:shadow-xl sm:ml-0 sm:mt-0 sm:h-80 sm:w-80 sm:px-10 sm:py-8 md:h-72 md:w-96 md:px-8 lg:h-72 lg:w-[30rem]"
+                className="relative top-0 flex flex-col  items-start justify-center w-11/12 px-6 py-4 mx-4 mt-5 space-y-2 overflow-hidden text-left transition-all duration-300 ease-in-out bg-blue-600 border-transparent rounded-lg shadow-lg  min-h-fit lg:group hover:-top-1 hover:bg-blue-700 hover:shadow-xl sm:h-80 sm:w-80 sm:px-10 sm:py-8 md:h-72 md:w-96 md:px-8 lg:h-72 lg:w-[30rem]"
             >
                 <div className="flex items-center justify-between">
                     <h2 className="py-5 text-2xl font-semibold leading-6 text-white">

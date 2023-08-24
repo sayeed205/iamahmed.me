@@ -46,8 +46,8 @@ export default function Header() {
                                     className={cn(
                                         'px-4 py-2 rounded-md text-sm lg:text-base relative no-underline duration-300 ease-in',
                                         isActive
-                                            ? 'text-zinc-100'
-                                            : 'text-zinc-400',
+                                            ? 'text-foreground'
+                                            : 'text-muted-foreground',
                                     )}
                                     data-active={isActive}
                                     onMouseOver={() =>
