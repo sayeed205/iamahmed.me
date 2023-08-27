@@ -94,6 +94,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     <Analytics />
                     <TailwindIndicator />
                 </ThemeProvider>
+                <Script
+                    defer
+                    src="https://static.cloudflareinsights.com/beacon.min.js?token=25de00b46ae445d692f2557c2bb27122"
+                    data-cf-beacon='{"token": "25de00b46ae445d692f2557c2bb27122"}'
+                />
             </body>
             <Script
                 async
