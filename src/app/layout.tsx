@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Script from 'next/script';
 
 import { fontSans } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
@@ -85,7 +86,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     defaultTheme="system"
                     enableSystem
                 >
-                    {/* <IconContext.Provider value={{ size: '1em' }}> */}
                     <BlobAnimation />
                     <Header />
                     {children}
@@ -93,9 +93,20 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     <Cursor />
                     <Analytics />
                     <TailwindIndicator />
-                    {/* </IconContext.Provider> */}
                 </ThemeProvider>
             </body>
+            <Script
+                async
+                src="https://www.googletagmanager.com/gtag/js?id=G-0YVK7WX631"
+            />
+            <Script id="google-analytics">
+                {`
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() { dataLayer.push(arguments); }
+                    gtag('js', new Date());
+                    gtag('config', 'G-0YVK7WX631');
+                `}
+            </Script>
         </html>
     );
 }
