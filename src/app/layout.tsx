@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         template: `Sayed Ahmed's %s`,
     },
     description: 'Full Stack Web Developer, based in WB, India.',
-    metadataBase: new URL(siteURL),
+    metadataBase: siteURL ? new URL(siteURL) : undefined,
     keywords: [
         'Portfolio',
         'Next.js',
@@ -112,6 +112,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     gtag('config', 'G-0YVK7WX631');
                 `}
             </Script>
+            <Script src="https://sdk.bot9.ai/bot.js?id=015a62ba-219a-42da-bb14-eeb2d9391a2c"></Script>
         </html>
     );
 }
