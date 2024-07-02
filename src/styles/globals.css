@@ -113,21 +113,3 @@ html.dark ::-webkit-scrollbar {
 }
 
 /* custom scrollbar */
-
-/* @media screen and (max-width: 280px) {
-    .foldIndexTitle {
-        font-size: 2rem;
-    }
-    .foldSkillCard {
-        padding: 1rem;
-    }
-    .foldContactCard {
-        padding: 28px 0 28px 0;
-    }
-    .foldContactCard .foldContactIcon {
-        display: none;
-    }
-    .foldButton {
-        font-size: 1rem;
-    }
-} */
