@@ -5,9 +5,18 @@ const nextConfig = {
             test: /\.node/,
             use: 'raw-loader',
         });
-        config.resolve.alias.canvas = false;
 
         return config;
+    },
+    async redirects() {
+        return [
+            {
+                source: '/resume',
+                destination:
+                    'https://drive.google.com/file/d/1DA_-5kHlf3_2dXG8_cLQmPqPk72QjFmd/view?usp=sharing',
+                permanent: true,
+            },
+        ];
     },
 };
 

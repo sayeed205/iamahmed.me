@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
 
 import { fontSans } from '@/lib/fonts';
@@ -19,6 +19,13 @@ interface RootLayoutProps {
 
 const siteURL = process.env.NEXT_PUBLIC_URL as string;
 
+export const viewport: Viewport = {
+    themeColor: [
+        { media: '(prefers-color-scheme: light)', color: 'white' },
+        { media: '(prefers-color-scheme: dark)', color: 'black' },
+    ],
+};
+
 export const metadata: Metadata = {
     title: {
         default: 'Sayed Ahmed',
@@ -36,6 +43,12 @@ export const metadata: Metadata = {
         'TypeScript',
         'Web Developer',
         'Backend Developer',
+        'Sayed Ahmed',
+        'Sayeed Ahmed',
+        "Sayed Ahmed's Portfolio",
+        'https://hitarashi.bio.link',
+        'hitarashi',
+        'sayeed205',
     ],
     authors: [
         {
@@ -44,10 +57,6 @@ export const metadata: Metadata = {
         },
     ],
     creator: 'Sayed Ahmed',
-    themeColor: [
-        { media: '(prefers-color-scheme: light)', color: 'white' },
-        { media: '(prefers-color-scheme: dark)', color: 'black' },
-    ],
     openGraph: {
         type: 'website',
         locale: 'en_US',

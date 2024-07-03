@@ -13,11 +13,11 @@ import { ModeToggle } from '../mode-toggle';
 import { buttonVariants } from './button';
 
 const navItem = [
-    { name: 'Home', href: '/' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'Skills', href: '/skills' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'Resume', href: '/resume' },
+    { name: 'Home', href: '/', target: '_self' },
+    { name: 'Projects', href: '/projects', target: '_self' },
+    { name: 'Skills', href: '/skills', target: '_self' },
+    { name: 'Contact', href: '/contact', target: '_self' },
+    { name: 'Resume', href: '/resume', target: '_blank' },
 ];
 
 export default function Header() {
@@ -40,12 +40,14 @@ export default function Header() {
                         <ModeToggle />
                         <div className="relative flex justify-start w-full gap-2 rounded-lg">
                             {navItem.map((item) => {
-                                const isActive = item.href === pathname;
+                                const { name, href, target } = item;
+                                const isActive = href === pathname;
 
                                 return (
                                     <Link
-                                        key={item.name}
-                                        href={item.href}
+                                        key={name}
+                                        href={href}
+                                        target={target}
                                         className={cn(
                                             'px-4 py-2 rounded-md text-sm lg:text-base relative no-underline duration-300 ease-in',
                                             isActive
@@ -53,15 +55,13 @@ export default function Header() {
                                                 : 'text-muted-foreground',
                                         )}
                                         data-active={isActive}
-                                        onMouseOver={() =>
-                                            setHoveredPath(item.href)
-                                        }
+                                        onMouseOver={() => setHoveredPath(href)}
                                         onMouseLeave={() =>
                                             setHoveredPath(pathname)
                                         }
                                     >
-                                        <span>{item.name}</span>
-                                        {item.href === hoveredPath && (
+                                        <span>{name}</span>
+                                        {href === hoveredPath && (
                                             <motion.div
                                                 className="absolute bottom-0 left-0 h-full rounded-md bg-blue-600/80 -z-10"
                                                 layoutId="navbar"
@@ -88,7 +88,7 @@ export default function Header() {
                     <div className="flex md:hidden">
                         <ModeToggle />
                         <Hamburger
-                            onToggle={(toggle) => setShowMobileMenu(toggle)}
+                            onToggle={(t: any) => setShowMobileMenu(t)}
                             size={24}
                             rounded
                             label="Show menu"
