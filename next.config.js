@@ -13,7 +13,7 @@ const nextConfig = {
             {
                 source: '/resume',
                 destination:
-                    'https://drive.google.com/file/d/1DA_-5kHlf3_2dXG8_cLQmPqPk72QjFmd/view?usp=sharing',
+                    'https://drive.google.com/file/d/1r0uxW-LG9kLH3reVpSsGy53iCE7WhDHg/view?usp=sharing',
                 permanent: true,
             },
         ];
