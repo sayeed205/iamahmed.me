@@ -14,6 +14,7 @@ import { Route as ResumeRouteImport } from './routes/resume'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProjectsPdfRouteImport } from './routes/projects.pdf'
 import { Route as ApiOgRouteImport } from './routes/api/og'
 
 const SkillsRoute = SkillsRouteImport.update({
@@ -41,6 +42,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsPdfRoute = ProjectsPdfRouteImport.update({
+  id: '/pdf',
+  path: '/pdf',
+  getParentRoute: () => ProjectsRoute,
+} as any)
 const ApiOgRoute = ApiOgRouteImport.update({
   id: '/api/og',
   path: '/api/og',
@@ -50,33 +56,50 @@ const ApiOgRoute = ApiOgRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/projects': typeof ProjectsRoute
+  '/projects': typeof ProjectsRouteWithChildren
   '/resume': typeof ResumeRoute
   '/skills': typeof SkillsRoute
   '/api/og': typeof ApiOgRoute
+  '/projects/pdf': typeof ProjectsPdfRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/projects': typeof ProjectsRoute
+  '/projects': typeof ProjectsRouteWithChildren
   '/resume': typeof ResumeRoute
   '/skills': typeof SkillsRoute
   '/api/og': typeof ApiOgRoute
+  '/projects/pdf': typeof ProjectsPdfRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/projects': typeof ProjectsRoute
+  '/projects': typeof ProjectsRouteWithChildren
   '/resume': typeof ResumeRoute
   '/skills': typeof SkillsRoute
   '/api/og': typeof ApiOgRoute
+  '/projects/pdf': typeof ProjectsPdfRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/projects' | '/resume' | '/skills' | '/api/og'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/projects'
+    | '/resume'
+    | '/skills'
+    | '/api/og'
+    | '/projects/pdf'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/projects' | '/resume' | '/skills' | '/api/og'
+  to:
+    | '/'
+    | '/contact'
+    | '/projects'
+    | '/resume'
+    | '/skills'
+    | '/api/og'
+    | '/projects/pdf'
   id:
     | '__root__'
     | '/'
@@ -85,12 +108,13 @@ export interface FileRouteTypes {
     | '/resume'
     | '/skills'
     | '/api/og'
+    | '/projects/pdf'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
-  ProjectsRoute: typeof ProjectsRoute
+  ProjectsRoute: typeof ProjectsRouteWithChildren
   ResumeRoute: typeof ResumeRoute
   SkillsRoute: typeof SkillsRoute
   ApiOgRoute: typeof ApiOgRoute
@@ -133,6 +157,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects/pdf': {
+      id: '/projects/pdf'
+      path: '/pdf'
+      fullPath: '/projects/pdf'
+      preLoaderRoute: typeof ProjectsPdfRouteImport
+      parentRoute: typeof ProjectsRoute
+    }
     '/api/og': {
       id: '/api/og'
       path: '/api/og'
@@ -143,10 +174,22 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface ProjectsRouteChildren {
+  ProjectsPdfRoute: typeof ProjectsPdfRoute
+}
+
+const ProjectsRouteChildren: ProjectsRouteChildren = {
+  ProjectsPdfRoute: ProjectsPdfRoute,
+}
+
+const ProjectsRouteWithChildren = ProjectsRoute._addFileChildren(
+  ProjectsRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
-  ProjectsRoute: ProjectsRoute,
+  ProjectsRoute: ProjectsRouteWithChildren,
   ResumeRoute: ResumeRoute,
   SkillsRoute: SkillsRoute,
   ApiOgRoute: ApiOgRoute,
