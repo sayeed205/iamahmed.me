@@ -18,5 +18,9 @@
       "persist": true,
       "head_sampling_rate": 1
     }
+  },
+  "vars": {
+    "VITE_RESUME_URL": "https://drive.google.com/file/d/1fwXYdEk7eOGL2glIfCeA_m2m1ju9gUGE/view?usp=sharing",
+    "VITE_PUBLIC_URL": "https://iahmed.qzz.io"
   }
 }

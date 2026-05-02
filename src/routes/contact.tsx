@@ -57,7 +57,46 @@ const ContactData: ContactInfo[] = [
 	},
 ];
 
-export const Route = createFileRoute("/contact")({ component: Contacts });
+const siteURL = import.meta.env.VITE_PUBLIC_URL || "https://iahmed.qzz.io";
+const pageURL = `${siteURL}/contact`;
+const ogImageURL = `${siteURL}/api/og?variant=contact`;
+
+export const Route = createFileRoute("/contact")({
+	head: () => ({
+		meta: [
+			{ title: "Contact | Sayed Ahmed" },
+			{
+				name: "description",
+				content:
+					"Contact Sayed Ahmed through LinkedIn, GitHub, X, Telegram, email, or phone.",
+			},
+			{ property: "og:type", content: "website" },
+			{ property: "og:url", content: pageURL },
+			{ property: "og:title", content: "Contact | Sayed Ahmed" },
+			{
+				property: "og:description",
+				content:
+					"Reach Sayed Ahmed on LinkedIn, GitHub, X, Telegram, email, or phone for full-stack development work.",
+			},
+			{ property: "og:image", content: ogImageURL },
+			{ property: "og:image:width", content: "1200" },
+			{ property: "og:image:height", content: "630" },
+			{ property: "og:image:type", content: "image/png" },
+			{ name: "twitter:card", content: "summary_large_image" },
+			{ name: "twitter:url", content: pageURL },
+			{ name: "twitter:site", content: "@sayeed205" },
+			{ name: "twitter:creator", content: "@sayeed205" },
+			{ name: "twitter:title", content: "Contact | Sayed Ahmed" },
+			{
+				name: "twitter:description",
+				content:
+					"Reach Sayed Ahmed on LinkedIn, GitHub, X, Telegram, email, or phone for full-stack development work.",
+			},
+			{ name: "twitter:image", content: ogImageURL },
+		],
+	}),
+	component: Contacts,
+});
 
 function Contacts() {
 	return (
