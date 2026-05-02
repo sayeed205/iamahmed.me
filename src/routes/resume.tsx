@@ -1,7 +1,8 @@
 import { createFileRoute, redirect } from "@tanstack/react-router";
 
-const resumeURL = import.meta.env.VITE_RESUME_URL;
-const siteURL = import.meta.env.VITE_PUBLIC_URL || "https://iahmed.qzz.io";
+
+const resumeURL = process.env.VITE_RESUME_URL;
+const siteURL =process.env.VITE_PUBLIC_URL || "https://iahmed.qzz.io";
 const resumePageURL = `${siteURL}/resume`;
 const resumeOgImageURL = `${siteURL}/api/og?variant=resume`;
 
