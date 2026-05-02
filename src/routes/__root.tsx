@@ -33,12 +33,13 @@ export const Route = createRootRoute({
 			},
 			{
 				name: "description",
-				content: "Full Stack Web Developer, based in WB, India.",
+				content:
+					"Full-stack developer specializing in Node.js, AdonisJS, React, Inertia.js, and PostgreSQL.",
 			},
 			{
 				name: "keywords",
 				content:
-					"Portfolio, TanStack Start, React, Tailwind CSS, TypeScript, Web Developer, Backend Developer, Sayed Ahmed, Sayeed Ahmed, hitarashi, sayeed205",
+					"Portfolio, Node.js, AdonisJS, React, Inertia.js, PostgreSQL, TypeScript, SaaS, Web Developer, Backend Developer, Sayed Ahmed, Sayeed Ahmed, hitarashi, sayeed205",
 			},
 			{
 				name: "author",
@@ -62,7 +63,8 @@ export const Route = createRootRoute({
 			},
 			{
 				property: "og:description",
-				content: "Full Stack Web Developer, based in WB, India.",
+				content:
+					"Full-stack developer specializing in Node.js, AdonisJS, React, Inertia.js, and PostgreSQL.",
 			},
 			{
 				property: "og:site_name",
@@ -78,7 +80,8 @@ export const Route = createRootRoute({
 			},
 			{
 				name: "twitter:description",
-				content: "Full Stack Web Developer, based in WB, India.",
+				content:
+					"Full-stack developer specializing in Node.js, AdonisJS, React, Inertia.js, and PostgreSQL.",
 			},
 			{
 				name: "twitter:image",

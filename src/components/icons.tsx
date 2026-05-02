@@ -5,6 +5,7 @@ import {
 	LuExternalLink,
 	LuGithub,
 	LuLinkedin,
+	LuPhone,
 	LuTwitter,
 } from "react-icons/lu";
 import { MdOutlineEmail } from "react-icons/md";
@@ -21,6 +22,7 @@ export const Icons = {
 	gitHub: LuGithub,
 	telegram: LiaTelegram,
 	twitter: LuTwitter,
+	phone: LuPhone,
 	mail: MdOutlineEmail,
 	bio: () => (
 		<svg

@@ -24,7 +24,9 @@ function Home() {
 				aria-label="paragraph"
 				className="heading px-3 py-8 text-base text-black dark:text-white md:text-2xl xl:mx-80 2xl:mx-110"
 			>
-				a Full Stack Web developer, based in India
+				Full-stack developer building SaaS platforms, admin dashboards,
+				authentication systems, and production business applications with
+				Node.js, AdonisJS, React, Inertia.js, and PostgreSQL.
 			</motion.p>
 			<Link to="/projects">
 				<motion.button

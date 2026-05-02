@@ -43,6 +43,13 @@ const ContactData: ContactInfo[] = [
 	},
 	{
 		id: 6,
+		social: "Phone",
+		username: "+91 9851305775",
+		link: "tel:+919851305775",
+		image: <Icons.phone size="2em" />,
+	},
+	{
+		id: 7,
 		social: "Bio.link",
 		username: "@hitarashi",
 		link: "https://hitarashi.bio.link/",
