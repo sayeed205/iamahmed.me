@@ -2,6 +2,7 @@ import { TanStackDevtools } from "@tanstack/react-devtools";
 import {
   createRootRoute,
   HeadContent,
+  Link,
   Outlet,
   Scripts,
 } from "@tanstack/react-router";
@@ -154,8 +155,33 @@ export const Route = createRootRoute({
     ],
   }),
   component: () => <Outlet />,
+  notFoundComponent: NotFoundPage,
   shellComponent: RootDocument,
 });
+
+function NotFoundPage() {
+  return (
+    <main className="flex min-h-screen items-center justify-center px-4 pt-28 pb-24 text-center sm:px-8 lg:px-16">
+      <section className="max-w-xl rounded-2xl border border-border bg-background/85 p-8 shadow-2xl backdrop-blur">
+        <p className="font-semibold text-primary text-sm uppercase tracking-[0.3em]">
+          404
+        </p>
+        <h1 className="mt-4 font-bold text-4xl tracking-tight md:text-5xl">
+          Page not found
+        </h1>
+        <p className="mt-4 text-muted-foreground">
+          The page you are looking for does not exist or has been moved.
+        </p>
+        <Link
+          to="/"
+          className="mt-8 inline-flex rounded-md bg-primary px-5 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+        >
+          Go to home
+        </Link>
+      </section>
+    </main>
+  );
+}
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
