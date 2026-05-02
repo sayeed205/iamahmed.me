@@ -2,7 +2,7 @@ import { createFileRoute, redirect } from "@tanstack/react-router";
 
 const projectsURL = process.env.VITE_PROJECTS_URL;
 
-export const Route = createFileRoute("/projects/pdf")({
+export const Route = createFileRoute("/projects.pdf")({
   beforeLoad: () => {
     if (projectsURL) {
       throw redirect({ href: projectsURL });
