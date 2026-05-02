@@ -1,18 +1,35 @@
 {
-    "prettier.configPath": "./prettier.config.js",
-    "prettier.prettierPath": "./node_modules/prettier/index.cjs",
-    "cSpell.words": [
-        "callees",
-        "classname",
-        "clickables",
-        "clsx",
-        "dyno",
-        "Goel",
-        "gtag",
-        "iamahmed",
-        "ianvs",
-        "lucide",
-        "Milind",
-        "raisonne"
-    ]
+	"files.watcherExclude": {
+		"**/routeTree.gen.ts": true
+	},
+	"search.exclude": {
+		"**/routeTree.gen.ts": true
+	},
+	"files.readonlyInclude": {
+		"**/routeTree.gen.ts": true
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[css]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"editor.codeActionsOnSave": {
+		"source.organizeImports.biome": "explicit"
+	}
 }

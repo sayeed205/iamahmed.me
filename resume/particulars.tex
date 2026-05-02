@@ -1,0 +1,134 @@
+\input{utilities}
+
+\def\firstname{Sayed}
+\def\lastname{Ahmed}
+\def\email{sayeed205@gmail.com}
+\def\linkedin{linkedin.com/in/sayeed205}
+\def\github{github.com/sayeed208}
+\def\jasphone{+919851305775}
+
+% \def\jbegin{\begin{itemize}}
+% \def\jitem{\item }
+% \def\jend{\end{itemize}}
+\def\jbegin{\resumeItemListStart}
+\def\jitem{\resumeItem}
+\def\jend{\resumeItemListEnd}
+
+\def\profileSummary{
+\section{Career summary so far}
+Full-stack developer specializing in Node.js, AdonisJS, React, Inertia.js, and PostgreSQL, with hands-on experience building SaaS platforms, admin dashboards, authentication systems, and production-ready business applications. Skilled in backend architecture, database design, type-safe development, and end-to-end delivery through internships, freelance work, and personal projects.
+}
+
+
+\def\achievements{
+    \jbegin
+        \jitem{\lrand[1]}
+        \jitem {\lrand[2]}
+        \jitem {\lrand[1]}
+        \jitem {\lrand[2]}
+    \jend
+}
+
+% # Add education item here
+\EducationTemplate{College}
+{Aug 2020}{Jul 2024}
+{Camellia Institute of Technology and Management}
+{B. Tech}
+{CSE - 9.4 CGPA}
+
+\ExpTemplate{IncubatorOp}
+{Aug 2024}
+{Sept 2024}
+{Full-Stack Developer}
+{\href{https://incubator-op.vercel.app}{IncubatorOP}}
+{On Site}
+{
+\jbegin
+    \jitem{Spearheaded the development of \href{https://teacherop.com}{teacherop.com}, an AI-driven platform designed for seamless text-based course and assessment creation.}
+    \jitem{Architected and implemented the entire system from scratch, integrating AI tools to streamline content generation and evaluation processes.}
+\jend
+}
+
+\ExpTemplate{UnocoGlobal}
+{Dec 2022}
+{Feb 2023}
+{Backend Developer Intern}
+{\href{https://www.unicoglobal.in}{Unico Global}}
+{Remote}
+{
+\jbegin
+    \jitem{Led backend development for a closed community social \href{https://www.unicoglobal.in/portfolio/take-off-with-tami-community-mobile-web-app}{media chatting app}, serving over 5,000 active users.}
+    \jitem{Engineered Chrome extensions to scrape user information from 1,000+ Slack workspace members and 500+ LinkedIn connections, aiding data collection for marketing teams.}
+\jend
+}
+
+\ExpTemplate{Dukaan}
+{Oct 2023}
+{Mar 2024}
+{Backend Developer Intern}
+{\href{https://mydukaan.io}{Dukaan}}
+{On site}
+{
+\jbegin
+    \jitem{Enhanced performance of \href{https://bot9.ai}{BOT9.AI} by integrating plugins for platforms including Slack, Discord, Intercom, Freshdesk, Zendesk, and Meta Messenger.}
+    \jitem{Optimized SQL queries, reducing response time by 70\% (from 15s to 800ms) for fetching 10,000 user-bot conversations.}
+    \jitem{Implemented WebSocket features for real-time communication, improving user engagement.}
+\jend
+}
+
+\HckTemplate{wanderfly}
+{}
+{\href{https://www.wanderfly.in}{Wanderfly.in}}
+{AdonisJS, React, Inertia, Tailwind CSS, PostgreSQL, Slack API}
+{\jbegin
+    \item{Freelance full‑stack project: built \textbf{Wanderfly}, a SaaS workplace wellbeing platform offering mood tracking, stress check‑ins, AI‑therapy chat, and personalized wellness programs.}
+    \item {Integrated seamless experience via \textbf{Slack}, enabling anonymous pulse checks, stress dashboards, team leaderboards, and real‑time manager alerts.}
+    \item {Delivered a 25\% reduction in HR stress and 10\% increase in employee engagement within three months at a client firm; estimated turnover‑cost savings ₹4K per head.}
+    \item {Enabled HR analytics and trend reporting through gamified streak tracking and well‑being dashboards to support proactive interventions.}
+\jend}
+
+\HckTemplate{hsmjewellers}
+{}
+{\href{https://hsmjewellers.com}{HSM Jewellers}}
+{AdonisJS, React, Inertia, Tailwind CSS, PostgreSQL, R2}
+{\jbegin
+    \item{Freelance full‑stack project: built \textbf{HSMJewellers}, a full-stack network marketing/MLM jewellery platform to manage member onboarding, referral-tree structures, gold wallet purchases, EMI plans, rewards, withdrawals, and admin workflows.}
+    \item {Implemented scalable MLM backend workflows including live gold-rate fetching with caching, recursive downline/upline processing, queue-based achievement calculations, and scheduled salary/reward computation.}
+    \item {Integrated production-ready financial and compliance features such as GST-aware PDF invoices, KYC/bank document uploads, Cloudflare R2/S3-compatible storage, Redis caching, and transaction-linked audit documentation.}
+\jend}
+
+\HckTemplate{letsgo}
+{}
+{\href{https://www.exploreletsgo.com}{Lets GO}}
+{AdonisJS, React, Inertia, Tailwind CSS, PostgreSQL, Kotlin, MDY, Android}
+{\jbegin
+    \item{Freelance full‑stack project: Led end-to-end development of an internal travel operations platform across Android and backend services, helping staff manage customers, tours, invoices, vouchers, receipts, and reminders from one workflow.}
+    \item {Built a typed client-server integration using backend OpenAPI documentation with Android Retrofit/Moshi code generation, reducing API mismatch issues and speeding up feature delivery.}
+    \item {Implemented production-ready reminder and document workflows, including scheduled backend notification jobs, Firebase Cloud Messaging push alerts, offline voucher draft storage, and branded PDF voucher/receipt generation.}
+\jend}
+
+\HckTemplate{ankusfood}
+{}
+{\href{https://ankusfood.com}{Ankus Food}}
+{AdonisJS, React, Inertia, Tailwind CSS, PostgreSQL}
+{\jbegin
+    \item{Freelance: Built a full-stack internal operations platform for a multi-outlet food company centralizing staff, kitchen/outlet, and admin workflows.}
+    \item {Implemented workforce management features including staff assignment, outlet transfers, resignation tracking, active/resigned filters, and manager-scoped access control.}
+    \item {Developed a secure role-based dashboard with outlet KPIs, staff analytics.}
+\jend}
+
+
+% \DefineArrayVar{Education}{@}
+% {,}{School, Course, Stream, Start, End}
+% {,}{C,D}
+
+
+% % # Add experience item here
+
+
+
+
+% \renewcommand{addEducation}{}
+
+
+% # Add projects here
