@@ -17,6 +17,7 @@ import appCss from "../styles.css?url";
 
 const siteURL = import.meta.env.VITE_PUBLIC_URL || "https://iahmed.qzz.io";
 const showDevtools = import.meta.env.DEV;
+const ogImageURL = `${siteURL}/api/og`;
 
 export const Route = createRootRoute({
 	head: () => ({
@@ -71,8 +72,36 @@ export const Route = createRootRoute({
 				content: "Sayed Ahmed's Portfolio",
 			},
 			{
+				property: "og:image",
+				content: ogImageURL,
+			},
+			{
+				property: "og:image:width",
+				content: "1200",
+			},
+			{
+				property: "og:image:height",
+				content: "630",
+			},
+			{
+				property: "og:image:type",
+				content: "image/png",
+			},
+			{
 				name: "twitter:card",
 				content: "summary_large_image",
+			},
+			{
+				name: "twitter:url",
+				content: siteURL,
+			},
+			{
+				name: "twitter:site",
+				content: "@sayeed205",
+			},
+			{
+				name: "twitter:creator",
+				content: "@sayeed205",
 			},
 			{
 				name: "twitter:title",
@@ -85,7 +114,7 @@ export const Route = createRootRoute({
 			},
 			{
 				name: "twitter:image",
-				content: `${siteURL}/og.png`,
+				content: ogImageURL,
 			},
 			{
 				name: "theme-color",
@@ -130,7 +159,7 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
 			<head>
 				<HeadContent />
 			</head>

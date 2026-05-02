@@ -30,8 +30,8 @@ const ContactData: ContactInfo[] = [
 	{
 		id: 4,
 		social: "Twitter",
-		username: "@Sayeed81828980",
-		link: "https://twitter.com/Sayeed81828980",
+		username: "@sayeed205",
+		link: "https://x.com/sayeed205",
 		image: <Icons.twitter size="2em" />,
 	},
 	{

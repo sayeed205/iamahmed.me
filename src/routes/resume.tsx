@@ -1,28 +1,26 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
-const resumeUrl =
-	"https://drive.google.com/file/d/1mY5dK8rdJ_V_c25nCAFPYTUqaU1xtI2B/view?usp=sharing";
+const resumeURL = import.meta.env.VITE_RESUME_URL;
 
-export const Route = createFileRoute("/resume")({ component: ResumeRedirect });
+export const Route = createFileRoute("/resume")({
+	beforeLoad: () => {
+		if (resumeURL) {
+			throw redirect({ href: resumeURL });
+		}
+	},
+	component: ResumeFallback,
+});
 
-function ResumeRedirect() {
-	useEffect(() => {
-		window.location.replace(resumeUrl);
-	}, []);
 
+function ResumeFallback() {
 	return (
-		<main className="flex h-screen items-center justify-center px-6 text-center">
-			<p className="text-lg text-foreground">
-				Redirecting to resume.{" "}
-				<a
-					className="font-medium underline underline-offset-4"
-					href={resumeUrl}
-				>
-					Open it here
-				</a>
-				.
-			</p>
+		<main className="flex min-h-screen items-center justify-center px-4 pt-28 pb-24 text-center sm:px-8 lg:px-16">
+			<section className="max-w-xl rounded-2xl border border-border bg-background/85 p-8 shadow-2xl backdrop-blur">
+				<h1 className="font-bold text-3xl tracking-tight">Resume</h1>
+				<p className="mt-4 text-muted-foreground">
+					Resume link is not configured. Set VITE_RESUME_URL in the environment.
+				</p>
+			</section>
 		</main>
 	);
 }

@@ -14,6 +14,7 @@ import { Route as ResumeRouteImport } from './routes/resume'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiOgRouteImport } from './routes/api/og'
 
 const SkillsRoute = SkillsRouteImport.update({
   id: '/skills',
@@ -40,6 +41,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiOgRoute = ApiOgRouteImport.update({
+  id: '/api/og',
+  path: '/api/og',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -47,6 +53,7 @@ export interface FileRoutesByFullPath {
   '/projects': typeof ProjectsRoute
   '/resume': typeof ResumeRoute
   '/skills': typeof SkillsRoute
+  '/api/og': typeof ApiOgRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByTo {
   '/projects': typeof ProjectsRoute
   '/resume': typeof ResumeRoute
   '/skills': typeof SkillsRoute
+  '/api/og': typeof ApiOgRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,13 +70,21 @@ export interface FileRoutesById {
   '/projects': typeof ProjectsRoute
   '/resume': typeof ResumeRoute
   '/skills': typeof SkillsRoute
+  '/api/og': typeof ApiOgRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/projects' | '/resume' | '/skills'
+  fullPaths: '/' | '/contact' | '/projects' | '/resume' | '/skills' | '/api/og'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/projects' | '/resume' | '/skills'
-  id: '__root__' | '/' | '/contact' | '/projects' | '/resume' | '/skills'
+  to: '/' | '/contact' | '/projects' | '/resume' | '/skills' | '/api/og'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/projects'
+    | '/resume'
+    | '/skills'
+    | '/api/og'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -77,6 +93,7 @@ export interface RootRouteChildren {
   ProjectsRoute: typeof ProjectsRoute
   ResumeRoute: typeof ResumeRoute
   SkillsRoute: typeof SkillsRoute
+  ApiOgRoute: typeof ApiOgRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -116,6 +133,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/og': {
+      id: '/api/og'
+      path: '/api/og'
+      fullPath: '/api/og'
+      preLoaderRoute: typeof ApiOgRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -125,6 +149,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProjectsRoute: ProjectsRoute,
   ResumeRoute: ResumeRoute,
   SkillsRoute: SkillsRoute,
+  ApiOgRoute: ApiOgRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
