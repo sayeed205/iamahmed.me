@@ -96,31 +96,26 @@ export default function Header() {
           </div>
         </div>
       </header>
-      <nav
-        className={cn(
-          "fixed inset-x-0 top-24 bottom-0 z-40 flex items-center justify-center overflow-hidden bg-background/50 backdrop-blur-lg transition duration-500 md:hidden md:backdrop-blur-none",
-          showMobileMenu
-            ? "pointer-events-auto translate-y-0 opacity-100"
-            : "pointer-events-none translate-y-full opacity-0",
-        )}
-      >
-        <div className="flex flex-col items-center gap-4">
-          {navItem.map((item) => (
-            <Link
-              key={item.name}
-              to={item.href}
-              target={item.target}
-              className={cn(
-                "flex items-center transition-all hover:bg-transparent",
-                buttonVariants({ variant: "link", font: "xl" }),
-              )}
-              onClick={() => setShowMobileMenu(false)}
-            >
-              {item.name}
-            </Link>
-          ))}
-        </div>
-      </nav>
+      {showMobileMenu ? (
+        <nav className="fixed inset-x-0 top-24 bottom-0 z-40 flex items-center justify-center overflow-hidden bg-background/50 backdrop-blur-lg md:hidden md:backdrop-blur-none">
+          <div className="flex flex-col items-center gap-4">
+            {navItem.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                target={item.target}
+                className={cn(
+                  "flex items-center transition-all hover:bg-transparent",
+                  buttonVariants({ variant: "link", font: "xl" }),
+                )}
+                onClick={() => setShowMobileMenu(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+        </nav>
+      ) : null}
     </>
   );
 }
